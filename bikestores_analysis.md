@@ -1,5 +1,7 @@
 # **BikeStore Data Analysis Project**
-A sample Data Analysis project utilizing BikeStore data. Technical stack involves PostgreSQL, MS Excel, and Tableau.
+**A sample Data Analysis project utilizing theoretical sales data from a bike shop. Technical stack involves PostgreSQL, MS Excel, and Tableau.**
+
+![bike_stock_image](./img/bikestore.jpeg)
 
 - [**BikeStore Data Analysis Project**](#bikestore-data-analysis-project)
   - [Disclaimer \& Differences](#disclaimer--differences)
