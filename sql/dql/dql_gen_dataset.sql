@@ -21,8 +21,8 @@ from sales.orders ord
 	join production.products prd on ite.product_id = prd.product_id
 	join production.categories ctg on prd.category_id = ctg.category_id
 	join sales.stores stor on ord.store_id = stor.store_id
-	join sales.staffs stf on stor.store_id = stf.store_id
+	join sales.staffs stf on ord.staff_id = stf.staff_id
 group by
 	1,2,3,4,5,6,7,8,9
 order by
-	ORDER_ID, SALES_REP;
+	ORDER_ID, ORDER_DATE, REVENUE desc;

@@ -1,0 +1,27 @@
+Sub DataCache()
+
+Dim PivTbl As PivotTable
+Dim ws As Worksheet
+Dim wsTemp As Worksheet
+Dim pt As PivotTable
+
+For Each ws In ActiveWorkbook.Worksheets
+
+For Each PivTbl In ws.PivotTables
+
+c = PivTbl.RowRange.Column
+r = PivTbl.RowRange.Row
+ws.Activate
+Cells(r, c).Select
+Set wsTemp = Worksheets.Add
+ActiveWorkbook.PivotCaches.Create(SourceType:=xlDatabase, SourceData:=PivTbl.SourceData).CreatePivotTable TableDestination:=wsTemp.Range("A3"), TableName:="PivotTableTemp"
+PivTbl.CacheIndex = wsTemp.PivotTables(1).CacheIndex
+Application.DisplayAlerts = False
+wsTemp.Delete
+Application.DisplayAlerts = True
+Set PivTbl = Nothing
+Next PivTbl
+
+Next ws
+
+End Sub
